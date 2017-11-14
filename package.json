@@ -1,0 +1,24 @@
+{
+  "name": "studenttimer",
+  "version": "1.0.0",
+  "description": "Angular material student timer",
+  "main": "f.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "DEBUG=express:* node studenttimer.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2",
+    "express-logger": "0.0.3",
+    "express-socket.io": "^1.0.3",
+    "http": "0.0.0",
+    "socket.io": "^2.0.4"
+  }
+}
