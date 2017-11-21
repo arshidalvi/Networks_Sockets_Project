@@ -1,0 +1,94 @@
+<div ng-app='StudentTimer' ng-controller="Studentctrl">
+	<md-card>
+		<md-toolbar>
+		<h1 class="md-display-3"> Teacher home page</h1>
+            <md-button ng-click="Logout()"><p><span>
+<md-icon aria-label="directions" class="material-icons">directions_run</md-icon>
+Logout</span></p></md-button>
+
+		</md-toolbar>
+
+		<h2> List of online students for teacher {{teachlogin}}</h2>
+
+	<table border="1" class="table">
+	<tr>
+		<th>Student id </th>
+		<th>Time of checking </th>
+	</tr>
+	<tr ng-repeat="stud in studonline">
+		<td>{{stud.id}} </td>
+		<td>{{stud.checkin}} </td>
+	</tr>
+        </table>
+
+<md-grid-list md-cols="7" md-row-height="1:1" md-gutter="8px" >
+   <md-grid-tile>
+	<md-whiteframe class="numinput md-whiteframe-4dp">
+		<md-input-container class="md-block md-headline">
+    	<input  disabled type="number" id="focus1" ng-model='curr[0]'
+	 maxlength="1"  />
+		</md-input-container>
+	</md-whiteframe>
+   </md-grid-tile>
+
+   <md-grid-tile>
+	<md-whiteframe class="numinput md-whiteframe-4dp">
+		<md-input-container class="md-block md-headline">
+    	<input disabled type="number" id="focus2"  ng-model='curr[1]'
+	 maxlength="1"  />
+		</md-input-container>
+	</md-whiteframe>
+   </md-grid-tile>
+
+   <md-grid-tile>
+	<md-whiteframe class="numinput md-whiteframe-4dp">
+		<md-input-container class="md-block md-headline">
+    	<input disabled type="number" id="focus3" ng-model="curr[2]"
+	 maxlength="1"  />
+		</md-input-container>
+	</md-whiteframe> </md-grid-tile>
+
+   <md-grid-tile>
+	<md-whiteframe class="numinput md-whiteframe-4dp">
+		<md-input-container class="md-block md-headline">
+    	<input disabled type="number" id="focus4" ng-model="curr[3]"
+	 maxlength="1"  />
+		</md-input-container>
+	</md-whiteframe>
+   </md-grid-tile>
+
+   <md-grid-tile>
+	<md-whiteframe class="numinput md-whiteframe-4dp">
+		<md-input-container class="md-block md-headline">
+    	<input disabled type="number" id="focus5" ng-model="curr[4]"
+	 maxlength="1"  />
+		</md-input-container>
+	</md-whiteframe>
+   </md-grid-tile>
+
+   <md-grid-tile>
+	<md-whiteframe class="numinput md-whiteframe-4dp">
+		<md-input-container class="md-block md-headline">
+    	<input disabled type="number" id="focus6" ng-model="curr[5]"
+	 maxlength="1"  />
+		</md-input-container>
+	</md-whiteframe>
+   </md-grid-tile>
+
+   <md-grid-tile>
+	<md-whiteframe class="numinput md-whiteframe-4dp">
+		<md-input-container class="md-block md-headline">
+    	<input disabled type="number" id="focus7" ng-model="curr[6]"
+	 maxlength="1"  />
+		</md-input-container>
+	</md-whiteframe>
+   </md-grid-tile>
+</md-grid-list>
+
+
+<div style="max-width: 780px">
+	<countdown autostart="true" time="30" colors="flat-colors-very-wide" callback="finished()"></countdown>
+	</div>
+
+	</md-card>
+</div>

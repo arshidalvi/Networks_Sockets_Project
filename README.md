@@ -54,7 +54,7 @@ Usage
 
 $ npm install
 $ cd public
-$ bower install (choose option 3)
+$ bower install (select option 3 for JSON option)
 $ npm start
 
 ```

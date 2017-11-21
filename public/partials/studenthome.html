@@ -1,0 +1,79 @@
+<div ng-app='StudentTimer' ng-controller="Studentctrl">
+	<md-card>
+		<md-toolbar>
+		<h1 class="md-display-3"> Student home page</h1>
+            <md-button ng-click="Logout()"><p><span>
+<md-icon aria-label="directions" class="material-icons">directions_run</md-icon>
+Logout</span></p></md-button>
+
+		</md-toolbar>
+		<h2> Enter the 7 digit number </h2>
+<md-grid-list md-cols="7" md-row-height="1:1" md-gutter="8px" >
+   <md-grid-tile>
+	<md-whiteframe class="numinput md-whiteframe-4dp">
+		<md-input-container class="md-block md-headline">
+    	<input  required type="number" id="focus1" ng-model='verf[0]'
+	 maxlength="1" move-next-on-maxlength />
+		</md-input-container>
+	</md-whiteframe>
+   </md-grid-tile>
+
+   <md-grid-tile>
+	<md-whiteframe class="numinput md-whiteframe-4dp">
+		<md-input-container class="md-block md-headline">
+    	<input required type="number" id="focus2"  ng-model='verf[1]'
+	 maxlength="1" move-next-on-maxlength />
+		</md-input-container>
+	</md-whiteframe>
+   </md-grid-tile>
+
+   <md-grid-tile>
+	<md-whiteframe class="numinput md-whiteframe-4dp">
+		<md-input-container class="md-block md-headline">
+    	<input required type="number" id="focus3" ng-model="verf[2]"
+	 maxlength="1" move-next-on-maxlength />
+		</md-input-container>
+	</md-whiteframe> </md-grid-tile>
+
+   <md-grid-tile>
+	<md-whiteframe class="numinput md-whiteframe-4dp">
+		<md-input-container class="md-block md-headline">
+    	<input required type="number" id="focus4" ng-model="verf[3]"
+	 maxlength="1" move-next-on-maxlength />
+		</md-input-container>
+	</md-whiteframe>
+   </md-grid-tile>
+
+   <md-grid-tile>
+	<md-whiteframe class="numinput md-whiteframe-4dp">
+		<md-input-container class="md-block md-headline">
+    	<input required type="number" id="focus5" ng-model="verf[4]"
+	 maxlength="1" move-next-on-maxlength />
+		</md-input-container>
+	</md-whiteframe>
+   </md-grid-tile>
+
+   <md-grid-tile>
+	<md-whiteframe class="numinput md-whiteframe-4dp">
+		<md-input-container class="md-block md-headline">
+    	<input required type="number" id="focus6" ng-model="verf[5]"
+	 maxlength="1" move-next-on-maxlength />
+		</md-input-container>
+	</md-whiteframe>
+   </md-grid-tile>
+
+   <md-grid-tile>
+	<md-whiteframe class="numinput md-whiteframe-4dp">
+		<md-input-container class="md-block md-headline">
+    	<input required type="number" id="focus7" ng-model="verf[6]"
+	 maxlength="1" move-next-on-maxlength />
+		</md-input-container>
+	</md-whiteframe>
+   </md-grid-tile>
+</md-grid-list>
+
+	<md-button ng-class="'md-primary md-raised'"
+ng-click="verifyMatch();" >Verify </md-button>
+
+	</md-card>
+</div>
