@@ -1,11 +1,11 @@
 ul li {
-list-style-type: none;
+	list-style-type: none;
 }
 
 input[type=number]::-webkit-inner-spin-button, 
 input[type=number]::-webkit-outer-spin-button { 
-  -webkit-appearance: none; 
-  margin: 0; 
+	-webkit-appearance: none; 
+	margin: 0; 
 }
 
 .ClassyCountdown-days, .ClassyCountdown-hours, .ClassyCountdown-minutes {
@@ -19,4 +19,26 @@ table {
 
 h1 {
 	padding: 0px 20px;
+	color: white;
+}
+
+.md-button {
+	color: white !important;
+	padding: 10px 20px !important;
+	margin: 10px 10px !important;
+}
+
+.container {
+	display: flex;
+	justify-content: center;
+	padding: 40px;
+}
+
+.vertical {
+	display: flex;
+	flex-direction: column;
+}
+
+.home-pic {
+	margin-right: 100px;
 }
