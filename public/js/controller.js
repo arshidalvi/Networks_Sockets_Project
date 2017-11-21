@@ -4,8 +4,7 @@ var app = angular.module('StudentTimer', ['ngResource', 'ngMaterial', 'ngAnimate
 
 app.config(function ($mdThemingProvider) {
     $mdThemingProvider.theme('default')
-        .primaryPalette('light-blue')
-        .accentPalette('brown');
+        .primaryPalette('blue');
 });
 
 app.config(function ($stateProvider, $urlRouterProvider) {
