@@ -1,20 +1,23 @@
 <div ng-app='StudentTimer' ng-controller="Studentctrl">
-	<md-card>
-		<md-toolbar>
-		<h1> Student logged in</h1>
-            <md-button ng-click="Logout()"><p><span>
-<md-icon aria-label="directions" class="material-icons">directions_run</md-icon>
-Logout</span></p></md-button>
-
-
-		</md-toolbar>
-
-		{{randomQuote}}
-		<div id="randompic">
-			<img ng-src="{{randomPic}}" />
+	<md-toolbar>
+		<div class="row">
+			<h1>Check-In Confirmation</h1>
+			<span flex></span>
+			<md-button class="md-icon-button" aria-label="Logout" ng-click="Logout()">
+				<md-icon class="material-icons">exit_to_app</md-icon>
+			</md-button>
 		</div>
+	</md-toolbar>
 
-	<h3>{{randomQuote}}</h3>
-
-	</md-card>
+	<div class="container">
+		<md-card class="login-card container">
+			<div class="vertical center" style="align-items: center;">
+				<h2 class="md-display-1">You have successfully checked-in!</h2>
+				<div id="randompic">
+					<img ng-src="{{randomPic}}" />
+				</div>
+				<h3>{{randomQuote}}</h3>
+			</div>
+		</md-card>
+	</div>
 </div>

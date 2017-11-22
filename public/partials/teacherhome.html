@@ -1,7 +1,7 @@
 <div ng-app='StudentTimer' ng-controller="Studentctrl">
 	<md-toolbar>
 		<div class="row">
-			<h1>Teacher Home Page</h1>
+			<h1>Teacher Home Page ({{teachlogin}})</h1>
 			<span flex></span>
 			<md-button class="md-icon-button" aria-label="Logout" ng-click="Logout()">
 				<md-icon class="material-icons">exit_to_app</md-icon>
@@ -23,7 +23,7 @@
 				</div>
 			</div>
 
-			<h2 class="md-display-1"> List of online students for teacher {{teachlogin}}</h2>	
+			<h2 class="md-display-1"> List of online students</h2>	
 			
 			<table border="1" class="table">
 				<tr>

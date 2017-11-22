@@ -112,8 +112,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             });
 
     })
-    .controller('Studentctrl', function ($window, $scope, $http, $state) {
-        $scope.verf = [];
+    .controller('Studentctrl', function ($window, $scope, $http, $state, $stateParams) {
         var socket = io.connect('/');
 
         $scope.Signup = function () {
@@ -175,14 +174,6 @@ app.config(function ($stateProvider, $urlRouterProvider) {
         };
 
         $scope.finished = function () {
-            $scope.curr = [];
-            $scope.curr[0] = parseInt(Math.floor(Math.random() * 10));
-            $scope.curr[1] = parseInt(Math.floor(Math.random() * 10));
-            $scope.curr[2] = parseInt(Math.floor(Math.random() * 10));
-            $scope.curr[3] = parseInt(Math.floor(Math.random() * 10));
-            $scope.curr[4] = parseInt(Math.floor(Math.random() * 10));
-            $scope.curr[5] = parseInt(Math.floor(Math.random() * 10));
-            $scope.curr[6] = parseInt(Math.floor(Math.random() * 10));
             $state.go($state.current, { 
                     teachlogin: $scope.teachlogin
             }, { reload: true});
@@ -194,8 +185,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
                 $scope.currdigits = msg.teachid;
                 var studlogin = msg.studid;
                 var teachlogin = msg.teachlogin;
-
-                studdigits = $scope.verf.join("");
+                studdigits = document.querySelector("#code_input").value;
                 if (studdigits == $scope.currdigits) {
                     socket.emit('studonline', {
                         id: studlogin,
