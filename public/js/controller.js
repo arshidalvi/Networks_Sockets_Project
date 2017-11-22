@@ -98,7 +98,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
                     ];
 
                     var pics = [
-                        "/public/images/timer_bomb.png",
+//                        "/public/images/timer_bomb.png",
                          "/public/images/1.jpg",
                          "/public/images/2.jpg",
                          "/public/images/3.jpg",
@@ -110,8 +110,10 @@ app.config(function ($stateProvider, $urlRouterProvider) {
                          "/public/images/9.jpg",
                          "/public/images/10.jpg",
                          "/public/images/11.jpg",
-//                         "/public/images/12.jpg",
-//                         "/public/images/13.jpg",
+                         "/public/images/12.jpg",
+                         "/public/images/13.jpg",
+                         "/public/images/14.jpg",
+                         "/public/images/15.jpg",
 
                     ];
                    $scope.randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
