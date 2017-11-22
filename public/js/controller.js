@@ -99,7 +99,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
 
                 url: "/studentsuccess",
                 templateUrl: "/public/partials/studentsuccess.html",
-                $(#myModal).modal('show')
+//                $(#myModal).modal('show')
                 controller: function ($scope, $stateParams) {
                     var quotes = [
                         "Hey",
