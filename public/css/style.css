@@ -47,12 +47,35 @@ input.login {
 	flex-direction: column;
 }
 
-.home-pic {
-	margin-right: 100px;
+.row {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
 }
 
 .reminder {
 	color: gray;
 	font-size: .9em;
 	margin: 10px;
+}
+
+/*
+Student
+*/
+.student-body {
+	margin-right: 50px;
+}
+
+.student{
+    width: 400px;
+    margin: 4% auto;
+    position: relative;
+}
+.srvc_icon{
+    width: 29px;
+    position: absolute;
+}
+.openBookIcon{
+    top: 20%;
+    right: 0;
 }

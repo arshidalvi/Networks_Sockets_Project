@@ -13,12 +13,9 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             .state('default', {
                 url: "/",
                 templateUrl: "/public/partials/main.html",
-                controller: "Studentctrl"
-            })
-            .state('grid', {
-                url: "/grid",
-                templateUrl: "/public/partials/grid.html",
-                controller: "Studentctrl"
+                controller: function ($scope, $stateParams) {
+                    animate();
+                }
             })
             .state('studlogin', {
                 url: "/studlogin",
@@ -135,8 +132,8 @@ app.config(function ($stateProvider, $urlRouterProvider) {
         };
 
         $scope.Logout = function () {
-		$state.go("default");
-	};
+            $state.go("default");
+        };
 
         $scope.Login = function () {
             id = $scope.id;
@@ -175,9 +172,9 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             $scope.curr[4] = parseInt(Math.floor(Math.random() * 10));
             $scope.curr[5] = parseInt(Math.floor(Math.random() * 10));
             $scope.curr[6] = parseInt(Math.floor(Math.random() * 10));
-	    $state.go($state.current, { 
-                teachlogin: $scope.teachlogin
-	    }, { reload: true});
+            $state.go($state.current, { 
+                    teachlogin: $scope.teachlogin
+            }, { reload: true});
         };
 
         $scope.verifyMatch = function () {
