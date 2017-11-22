@@ -123,13 +123,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
                         "/public/images/11.jpg",
                         "/public/images/12.jpg",
                         "/public/images/13.jpg",
-                        "/public/images/14.jpg",
-                        "/public/images/15.jpg",
-                        "/public/images/16.jpg",
-                        "/public/images/17.jpg",
-                        "/public/images/18.jpg",
-                        "/public/images/19.jpg",
-                        "/public/images/20.jpg"
+
                     ];
 //                    $scope.randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
                     $scope.randomPic = pics[Math.floor(Math.random() * pics.length)];
