@@ -45,24 +45,16 @@ app.config(function ($stateProvider, $urlRouterProvider) {
                 url: "/teacherhome",
                 templateUrl: "/public/partials/teacherhome.html",
                 controller: function ($scope, $stateParams) {
-		    $scope.teachlogin = $stateParams.teachlogin;
+		            $scope.teachlogin = $stateParams.teachlogin;
                     var socket = io.connect('/');
                     socket.emit('teachlogin');
                     socket.emit('liststudents', {
                         teachlogin: $stateParams.teachlogin
                     });
-                    $scope.curr = [];
+                    $scope.code = Math.floor(Math.random() * (10000000 - 1000000)) + 1000000;
                     $scope.studonline = [];
-                    $scope.curr[0] = parseInt(Math.floor(Math.random() * 10));
-                    $scope.curr[1] = parseInt(Math.floor(Math.random() * 10));
-                    $scope.curr[2] = parseInt(Math.floor(Math.random() * 10));
-                    $scope.curr[3] = parseInt(Math.floor(Math.random() * 10));
-                    $scope.curr[4] = parseInt(Math.floor(Math.random() * 10));
-                    $scope.curr[5] = parseInt(Math.floor(Math.random() * 10));
-                    $scope.curr[6] = parseInt(Math.floor(Math.random() * 10));
-                    currdigits = $scope.curr.join("");
                     socket.emit('teachid', {
-                        teachid: currdigits,
+                        teachid: $scope.code,
                         teachlogin: $stateParams.teachlogin
                     });
                     socket.on('studonline', function (msg) {
@@ -127,8 +119,22 @@ app.config(function ($stateProvider, $urlRouterProvider) {
         $scope.Signup = function () {
             id = $scope.id;
             pass = $scope.userpass;
-            $window.localStorage.setItem(id, pass);
-            $state.go("default");
+            
+            idInput = document.querySelector("#id_input").value;
+            if (!$scope.Form.$valid) {
+                if (idInput.toString().length != 7) {
+                    alert("Valid IDs must contain exactly 7 numbers!");
+                } else {
+                    alert("Password is required!")
+                }
+            } else {
+                if ($window.localStorage.getItem(id) !== null) {
+                    alert("User account has already been created!")
+                } else {
+                    $window.localStorage.setItem(id, pass);
+                    $state.go("default");
+                }
+            }
         };
 
         $scope.Logout = function () {
@@ -138,7 +144,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
         $scope.Login = function () {
             id = $scope.id;
             pass = $scope.userpass;
-            if ($window.localStorage.getItem(id) == pass && $window.localStorage.getItem(id) !== null) {
+            if ($scope.Form.$valid && $window.localStorage.getItem(id) == pass && $window.localStorage.getItem(id) !== null) {
                 socket.emit('studlogin');
                 if (id.toString().match(/^1000/)) {
                     if ($state.current.name == 'studlogin') {
@@ -159,7 +165,12 @@ app.config(function ($stateProvider, $urlRouterProvider) {
                     }
                 }
             } else {
-                alert("Login details are incorrect!");
+                idInput = document.querySelector("#id_input").value;
+                if (idInput.toString().length != 7) {
+                    alert("Valid IDs must contain exactly 7 numbers!")
+                } else {
+                    alert("Login details are incorrect!");
+                }
             }
         };
 
