@@ -125,14 +125,12 @@ app.config(function ($stateProvider, $urlRouterProvider) {
     })
     .controller('Studentctrl', function ($window, $scope, $http, $state) {
         $scope.verf = [];
-        $scope.signdigits = [];
         var socket = io.connect('/');
 
-
         $scope.Signup = function () {
-            digits = $scope.signdigits.join("");
+            id = $scope.id;
             pass = $scope.userpass;
-            $window.localStorage.setItem(digits, pass);
+            $window.localStorage.setItem(id, pass);
             $state.go("default");
         };
 
@@ -145,16 +143,23 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             pass = $scope.userpass;
             if ($window.localStorage.getItem(id) == pass && $window.localStorage.getItem(id) !== null) {
                 socket.emit('studlogin');
-
-                if (id.match(/^1000/)) {
-                    $state.go("studenthome");
-                    socket.emit('studid', {
-                        studid: id
-                    });
+                if (id.toString().match(/^1000/)) {
+                    if ($state.current.name == 'studlogin') {
+                        $state.go("studenthome");
+                        socket.emit('studid', {
+                            studid: id
+                        });
+                    } else {
+                        alert("Students should use the student login portal!");
+                    }
                 } else {
-                    $state.go("teacherhome", {
-                        teachlogin: id
-                    });
+                    if ($state.current.name == 'teachlogin') {
+                        $state.go("teacherhome", {
+                            teachlogin: id
+                        });
+                    } else {
+                        alert("Teachers should use the teacher login portal!");
+                    }
                 }
             } else {
                 alert("Login details are incorrect!");
