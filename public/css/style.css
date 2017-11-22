@@ -22,9 +22,17 @@ h1 {
 	color: white;
 }
 
+input.login {
+	margin-right: 40px;
+}
+
 .md-button {
 	padding: 10px 20px !important;
 	margin: 10px 10px !important;
+}
+
+.md-block {
+	margin: 20px;
 }
 
 .container {

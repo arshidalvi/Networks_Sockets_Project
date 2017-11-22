@@ -141,23 +141,23 @@ app.config(function ($stateProvider, $urlRouterProvider) {
 	};
 
         $scope.Login = function () {
-            digits = $scope.digits.join("");
+            id = $scope.id;
             pass = $scope.userpass;
-            if ($window.localStorage.getItem(digits) == pass) {
+            if ($window.localStorage.getItem(id) == pass && $window.localStorage.getItem(id) !== null) {
                 socket.emit('studlogin');
 
-                if (digits.match(/^1000/)) {
+                if (id.match(/^1000/)) {
                     $state.go("studenthome");
                     socket.emit('studid', {
-                        studid: digits
+                        studid: id
                     });
                 } else {
                     $state.go("teacherhome", {
-                        teachlogin: digits
+                        teachlogin: id
                     });
                 }
             } else {
-                alert("Login incorrect try again");
+                alert("Login details are incorrect!");
             }
         };
 

@@ -1,101 +1,27 @@
 <div ng-app='StudentTimer' ng-controller="Studentctrl">
+	<md-toolbar>
+		<h1>Teacher Login</h1>
+	</md-toolbar>
+	<div class="container">
+		<md-card class="login-card container">
+			<form name="Form">
 
-   <md-card>
-       <md-toolbar>
-          <div class="md-toolbar-tools">
-            <h2><span>
-<md-icon aria-label="copyright" class="material-icons">copyright</md-icon>
-Student/Teacher Login Form</span></h2>
-          </div>
-        </md-toolbar>
+				<md-input-container class="md-block">
+					<md-icon class="material-icons">account_circle</md-icon>
+					<label>Teacher ID</label>
+					<input class="login" ng-required="1" type="number" ng-model="studentId" pattern="^[0-9]{7}$">
+					</input>
+				</md-input-container>
 
-        <md-card-content>
-		<h2> Teacher login </h2>
-          <form name="Form">
-
-<md-icon aria-label="view module" class="material-icons">view_module</md-icon>
-              <label>Login</label>
-
-<md-grid-list md-cols="7" md-row-height="1:1" md-gutter="8px" >
-   <md-grid-tile>
-	<md-whiteframe class="numinput md-whiteframe-4dp">
-		<md-input-container class="md-block md-headline">
-    	<input  required type="number" id="focus1" ng-model='digits[0]'
-	 maxlength="1" move-next-on-maxlength />
-		</md-input-container>
-	</md-whiteframe>
-   </md-grid-tile>
-
-   <md-grid-tile>
-	<md-whiteframe class="numinput md-whiteframe-4dp">
-		<md-input-container class="md-block md-headline">
-    	<input required type="number" id="focus2"  ng-model='digits[1]'
-	 maxlength="1" move-next-on-maxlength />
-		</md-input-container>
-	</md-whiteframe>
-   </md-grid-tile>
-
-   <md-grid-tile>
-	<md-whiteframe class="numinput md-whiteframe-4dp">
-		<md-input-container class="md-block md-headline">
-    	<input required type="number" id="focus3" ng-model="digits[2]"
-	 maxlength="1" move-next-on-maxlength />
-		</md-input-container>
-	</md-whiteframe> </md-grid-tile>
-
-   <md-grid-tile>
-	<md-whiteframe class="numinput md-whiteframe-4dp">
-		<md-input-container class="md-block md-headline">
-    	<input required type="number" id="focus4" ng-model="digits[3]"
-	 maxlength="1" move-next-on-maxlength />
-		</md-input-container>
-	</md-whiteframe>
-   </md-grid-tile>
-
-   <md-grid-tile>
-	<md-whiteframe class="numinput md-whiteframe-4dp">
-		<md-input-container class="md-block md-headline">
-    	<input required type="number" id="focus5" ng-model="digits[4]"
-	 maxlength="1" move-next-on-maxlength />
-		</md-input-container>
-	</md-whiteframe>
-   </md-grid-tile>
-
-   <md-grid-tile>
-	<md-whiteframe class="numinput md-whiteframe-4dp">
-		<md-input-container class="md-block md-headline">
-    	<input required type="number" id="focus6" ng-model="digits[5]"
-	 maxlength="1" move-next-on-maxlength />
-		</md-input-container>
-	</md-whiteframe>
-   </md-grid-tile>
-
-   <md-grid-tile>
-	<md-whiteframe class="numinput md-whiteframe-4dp">
-		<md-input-container class="md-block md-headline">
-    	<input required type="number" id="focus7" ng-model="digits[6]"
-	 maxlength="1" move-next-on-maxlength />
-		</md-input-container>
-	</md-whiteframe>
-   </md-grid-tile>
-</md-grid-list>
-
-
-            <md-input-container class="md-block">
-<md-icon aria-label="touch app" class="material-icons">security</md-icon>
-              <label>Password</label>
-              <input type="password" name="password"
-ng-model="userpass" placeholder="password" required=""
-md-maxlength="100"/>
-              </md-input-container>
-
-            <md-button ng-click="Login();" class="md-raised md-primary">
-<md-icon aria-label="touch app" class="material-icons">home</md-icon>
-&nbsp;Login &nbsp;</md-button>
-
-          </form>
-        </md-card-content>
-   </md-card>
- </div>
+				<md-input-container class="md-block">
+					<md-icon class="material-icons">security</md-icon>
+					<label>Password</label>
+					<input class="login" type="password" name="password"
+					ng-model="userpass" ng-required="1" />
+				</md-input-container>
+			</form>
+			<md-button ng-click="Login();" class="md-raised md-primary"> Login </md-button>
+		</md-card>
+	</div>
 </div>
-</div>
+	
