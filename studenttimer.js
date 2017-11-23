@@ -85,7 +85,7 @@ ioProm.then(function (io) {
             socket.on('liststudents', function (msg) {
                 var str = "";
                 var studlist = studonline[msg.teachlogin];
-		console.log("STUD:: " + msg.teachlogin + " " + studlist);
+		        console.log("STUD:: " + msg.teachlogin + " " + studlist);
                 if (studlist) {
                     for (j = 0; j < studlist.length; j++) {
                         str += studlist[j].id + "," + studlist[j].checkin + "%";

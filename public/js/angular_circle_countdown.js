@@ -358,9 +358,9 @@ angular.module("circle.countdown", [])
                   },
                   seconds: {
                     gauge: {
-                      thickness: 0.01,
+                      thickness: 0.1,
                       bgColor: "rgba(0,0,0,0.05)",
-                      fgColor: "#f39c12"
+                      fgColor: "#2196F3"
                     },
                     textCSS: "font-family:\"Open Sans\";font-weight:300;color:#34495e;"
                   }

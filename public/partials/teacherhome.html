@@ -1,25 +1,44 @@
 <div ng-app='StudentTimer' ng-controller="Studentctrl">
-	<md-card>
-		<md-toolbar>
-		<h1 class="md-display-3"> Teacher home page</h1>
-            <md-button ng-click="Logout()"><p><span>
-<md-icon aria-label="directions" class="material-icons">directions_run</md-icon>
-Logout</span></p></md-button>
+	<md-toolbar>
+		<div class="row">
+			<h1>Teacher Home Page ({{teachlogin}})</h1>
+			<span flex></span>
+			<md-button class="md-icon-button" aria-label="Logout" ng-click="Logout()">
+				<md-icon class="material-icons">exit_to_app</md-icon>
+			</md-button>
+		</div>
+	</md-toolbar>
+	<div class="countdown-container">
+		<countdown autostart="true" time="30" colors="flat-colors" callback="finished()"></countdown>
+	</div>
+	<div class="container">
 
-		</md-toolbar>
+		<div class="vertical">
+			<div class="row">
+				<div class="vertical">
+					<h2 class="md-display-1"> Check-in Code </h2>
+					<div class="row">
+						<div class="digit-block" ng-repeat="digit in code.toString() track by $index"> {{ digit}} </div>
+					</div>
+				</div>
+			</div>
 
-		<h2> List of online students for teacher {{teachlogin}}</h2>
+			<h2 class="md-display-1"> List of online students</h2>	
+			
+			<table border="1" class="table">
+				<tr>
+					<th>Student id </th>
+					<th>Time of check-in </th>
+				</tr>
+				<tr ng-repeat="stud in studonline">
+					<td>{{stud.id}} </td>
+					<td>{{stud.checkin}} </td>
+				</tr>
+			</table>	
+		</div>
+	</div>
 
-	<table border="1" class="table">
-	<tr>
-		<th>Student id </th>
-		<th>Time of checking </th>
-	</tr>
-	<tr ng-repeat="stud in studonline">
-		<td>{{stud.id}} </td>
-		<td>{{stud.checkin}} </td>
-	</tr>
-        </table>
+		<!--
 
 <md-grid-list md-cols="7" md-row-height="1:1" md-gutter="8px" >
    <md-grid-tile>
@@ -86,9 +105,6 @@ Logout</span></p></md-button>
 </md-grid-list>
 
 
-<div style="max-width: 780px">
-	<countdown autostart="true" time="30" colors="flat-colors-very-wide" callback="finished()"></countdown>
-	</div>
+-->
 
-	</md-card>
 </div>
